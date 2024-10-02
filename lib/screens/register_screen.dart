@@ -212,7 +212,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         children: [
           Center(
             child: Container(
-              width: 350,
+              width: 340,
               height: 600,
               padding: const EdgeInsets.all(25),
               margin: const EdgeInsets.only(top: 100), 
@@ -220,7 +220,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.white,
                 border: Border.all(
                   color: const Color(0xFFD9D9D9),
-                  width: 2.0,
+                  width: 1.0,
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -228,7 +228,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 5),
                   const Text(
                     'Create New',
                     style: TextStyle(
@@ -250,7 +250,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         const TextSpan(
                           text: 'Already Registered? ',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Color(0xFF5A5A5A),
                           ),
                         ),
@@ -271,17 +271,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         TextSpan(
                           text: 'here.',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Color(0xFF5A5A5A),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 25),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(7),
                       child: Form(
                         key: _formKey,
                         child: Column(
@@ -295,7 +295,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               validator: (value) =>
                                   validateName(value, 'Name', 1, 50),
                             ),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 15),
                             _buildTextFormField(
                               controller: _email,
                               labelText: 'Email',
@@ -304,7 +304,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               focusedBorderColor: Color(0xFF2C2C2C),
                               validator: validateEmail,
                             ),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 15),
                             _buildTextFormField(
                               controller: _password,
                               labelText: 'Password',
@@ -326,7 +326,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 },
                               ),
                             ),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 15),
                             _buildTextFormField(
                               controller: _confirmPassword,
                               labelText: 'Confirm Password',
@@ -361,7 +361,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: const Color(0xFF2C2C2C),
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 113, vertical: 15),
+                                          horizontal: 108, vertical: 15),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
