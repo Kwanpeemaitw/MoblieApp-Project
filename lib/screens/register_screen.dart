@@ -178,8 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle: const TextStyle(color: Colors.black87),
-          floatingLabelStyle:
-              const TextStyle(fontSize: 16), 
+          floatingLabelStyle: const TextStyle(fontSize: 16),
           prefixIcon: Icon(icon, color: borderColor),
           suffixIcon: suffixIcon,
           enabledBorder: OutlineInputBorder(
@@ -198,8 +197,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          floatingLabelBehavior:
-              FloatingLabelBehavior.auto,
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
         ),
       ),
     );
@@ -213,9 +211,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           Center(
             child: Container(
               width: 340,
-              height: 600,
+              height: 550,
               padding: const EdgeInsets.all(25),
-              margin: const EdgeInsets.only(top: 100), 
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -258,14 +255,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           text: 'Sign in ',
                           style: const TextStyle(
                             fontSize: 16,
-                            color:
-                                Colors.black,
-                            decoration:
-                                TextDecoration.underline,
+                            color: Colors.black,
+                            decoration: TextDecoration.underline,
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Navigator.pushNamed(context,'/'); 
+                              Navigator.pushNamed(context, '/');
                             },
                         ),
                         TextSpan(
