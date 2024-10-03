@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:musicapp_final/screens/dashboard_screen.dart';
+// import 'package:musicapp_final/screens/playlists/lovesong_screen.dart';
 import 'package:musicapp_final/screens/register_screen.dart';
 import 'package:musicapp_final/screens/signin_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +32,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SigninScreen(), 
+        // '/': (context) => LovesongScreen(), 
+
         '/register': (context) => RegisterScreen(),
         '/dashboard': (context) => DashboardScreen(),
 
