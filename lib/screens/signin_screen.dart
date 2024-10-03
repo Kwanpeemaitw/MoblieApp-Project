@@ -17,13 +17,20 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          'assets/images/LogoBUS_0.png',
+          height: 50,
+        ),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+      ),
       body: Stack(
         children: [
-          // Center: Login form
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 40),
                 Container(
                   width: 340,
                   height: 600,
