@@ -1,13 +1,41 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
-class sadsongScreen extends StatefulWidget {
-  const sadsongScreen({super.key});
+class SadsongScreen extends StatefulWidget {
+  const SadsongScreen({super.key});
 
   @override
-  State<sadsongScreen> createState() => _sadsongScreenState();
+  State<SadsongScreen> createState() => _SadsongScreenState();
 }
 
-class _sadsongScreenState extends State<sadsongScreen> {
+class _SadsongScreenState extends State<SadsongScreen> {
+  final List<String> imagePaths = [
+    'assets/images/brother.png',
+    'assets/images/nomatterwhat.png',
+    'assets/images/liar.png',
+  ];
+
+  late int _currentImageIndex;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentImageIndex = 0;
+
+    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      setState(() {
+        _currentImageIndex = (_currentImageIndex + 1) % imagePaths.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +55,7 @@ class _sadsongScreenState extends State<sadsongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/brother.png',
+                imagePaths[_currentImageIndex], 
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -77,8 +105,7 @@ class _sadsongScreenState extends State<sadsongScreen> {
                         Text(
                           'แค่น้องชาย (Brother Zone)',
                           style: TextStyle(
-                            color:
-                                Colors.black,
+                            color: Colors.black,
                             fontSize: 18,
                           ),
                         ),
@@ -95,15 +122,108 @@ class _sadsongScreenState extends State<sadsongScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 10),
 
-            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondPage()),
+                );
+              },
+              child: Container(
+                width: 270,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        'assets/images/nomatterwhat.png',
+                        width: 41,
+                        height: 41,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'แค่ไหนแค่นั้น',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          'BUS',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondPage()),
+                );
+              },
+              child: Container(
+                width: 270,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        'assets/images/liar.png',
+                        width: 41,
+                        height: 41,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'LIAR',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          'BUS',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
 
 class SecondPage extends StatelessWidget {
   @override

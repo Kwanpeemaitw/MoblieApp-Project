@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-// import 'package:musicapp_final/screens/playlists/lovesong_screen.dart';
-import 'package:musicapp_final/screens/playlists/sadsong_screen.dart';
+import 'package:musicapp_final/screens/playlists/lovesong_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -92,7 +91,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => sadsongScreen()),
+                  MaterialPageRoute(builder: (context) => LovesongScreen()),
                 );
               },
               child: Container(

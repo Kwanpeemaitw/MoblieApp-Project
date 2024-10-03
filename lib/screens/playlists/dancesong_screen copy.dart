@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LovesongScreen extends StatefulWidget {
-  const LovesongScreen({super.key});
+class dancesongScreen extends StatefulWidget {
+  const dancesongScreen({super.key});
 
   @override
-  State<LovesongScreen> createState() => _LovesongScreenState();
+  State<dancesongScreen> createState() => _dancesongScreenState();
 }
 
-class _LovesongScreenState extends State<LovesongScreen> {
+class _dancesongScreenState extends State<dancesongScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/love.png',
+                'assets/images/brother.png',
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -35,7 +35,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'LOVE SONG',
+              'SAD SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -43,7 +43,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
-              '1 Song',
+              '3 Songs',
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -64,7 +64,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/love.png',
+                        'assets/images/brother.png',
                         width: 41,
                         height: 41,
                       ),
@@ -75,7 +75,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'Because of You, I Shine',
+                          'แค่น้องชาย (Brother Zone)',
                           style: TextStyle(
                             color:
                                 Colors.black,
