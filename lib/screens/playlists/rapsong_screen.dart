@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class rapsongScreen extends StatefulWidget {
-  const rapsongScreen({super.key});
+class RapsongScreen extends StatefulWidget {
+  const RapsongScreen({super.key});
 
   @override
-  State<rapsongScreen> createState() => _rapsongScreenState();
+  State<RapsongScreen> createState() => _RapsongScreenState();
 }
 
-class _rapsongScreenState extends State<rapsongScreen> {
+class _RapsongScreenState extends State<RapsongScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +23,11 @@ class _rapsongScreenState extends State<rapsongScreen> {
       body: Center(
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/brother.png',
+                'assets/images/bussing.png',
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -35,7 +35,7 @@ class _rapsongScreenState extends State<rapsongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'SAD SONG',
+              'HIP-HOP/RAP SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -43,7 +43,7 @@ class _rapsongScreenState extends State<rapsongScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
-              '3 Songs',
+              '1 Song',
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -64,7 +64,7 @@ class _rapsongScreenState extends State<rapsongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/brother.png',
+                        'assets/images/bussing.png',
                         width: 41,
                         height: 41,
                       ),
@@ -75,7 +75,7 @@ class _rapsongScreenState extends State<rapsongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'แค่น้องชาย (Brother Zone)',
+                          'เฟี้ยว',
                           style: TextStyle(
                             color:
                                 Colors.black,

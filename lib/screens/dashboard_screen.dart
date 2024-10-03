@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:musicapp_final/screens/playlists/lovesong_screen.dart';
 
+
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
@@ -29,7 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       if (_currentPage < imagePaths.length - 1) {
         _currentPage++;
       } else {
-        _currentPage = 0; // Return to the first page
+        _currentPage = 0; 
       }
       _pageController.animateToPage(
         _currentPage,
@@ -86,7 +87,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 },
               ),
             ),
-            const SizedBox(height: 20), // Add spacing below the image slider
+            const SizedBox(height: 20), 
             GestureDetector(
               onTap: () {
                 Navigator.push(
