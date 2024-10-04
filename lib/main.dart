@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:musicapp_final/screens/BUS/dashboard_screen.dart';
+import 'package:musicapp_final/screens/BUS/bushome_screen.dart';
 import 'package:musicapp_final/screens/register_screen.dart';
+import 'package:musicapp_final/screens/search_screen.dart';
 import 'package:musicapp_final/screens/signin_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -31,10 +32,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SigninScreen(), 
-        // '/': (context) => LovesongScreen(), 
-        // '/': (context) => SadsongScreen(), 
         '/register': (context) => RegisterScreen(),
-        '/dashboard': (context) => DashboardScreen(),
+        '/search': (context) => SearchScreen(),
+        '/dashboard': (context) => BushomeScreen(),
 
       },
       // home: const LoginScreen(),

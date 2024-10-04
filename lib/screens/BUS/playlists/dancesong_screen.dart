@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/feelingooh_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/tranformer_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/watchyourstep_music.dart';
 
 class DancesongScreen extends StatefulWidget {
   const DancesongScreen({super.key});
@@ -63,7 +66,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'HIP-HOP/DANCE SONG',
+              'DANCE SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -80,7 +83,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => FeelingoohMusic()),
                 );
               },
               child: Container(
@@ -128,7 +131,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => WatchyourstepMusic()),
                 );
               },
               child: Container(
@@ -176,7 +179,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => TransformerMusic()),
                 );
               },
               child: Container(
@@ -225,16 +228,4 @@ class _DancesongScreenState extends State<DancesongScreen> {
   }
 }
 
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Page'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Second Page!'),
-      ),
-    );
-  }
-}
+

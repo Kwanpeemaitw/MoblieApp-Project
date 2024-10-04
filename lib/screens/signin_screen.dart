@@ -18,19 +18,20 @@ class _SigninScreenState extends State<SigninScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Image.asset(
-        //   // 'assets/images/LogoBUS_0.png',
-        //   height: 50,
-        // ),
+        title: Image.asset(
+          'assets/images/logoapp.png',
+          height: 60,
+        ),
         backgroundColor: Colors.white,
         centerTitle: true,
+        automaticallyImplyLeading: false, 
       ),
       body: Stack(
         children: [
           Center(
             child: Column(
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: 30),
                 Container(
                   width: 340,
                   height: 600,
@@ -154,10 +155,8 @@ class _SigninScreenState extends State<SigninScreen> {
                           onPressed: () async {
                             final user = await AuthService().signInWithGoogle();
                             if (user != null) {
-                              // Navigate to dashboard or home screen after successful sign-in
-                              Navigator.pushNamed(context, '/dashboard');
+                              Navigator.pushNamed(context, '/search');
                             } else {
-                              // Handle sign-in failure (e.g., show a dialog or a snackbar)
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     content: Text('Google Sign-In failed')),

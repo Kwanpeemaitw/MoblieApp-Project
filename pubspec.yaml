@@ -55,6 +55,10 @@ flutter:
     - assets/images/BUS/step.png
     - assets/images/BUS/tranformer.png
     - assets/images/BUS/we.png
+    - assets/images/logoapp.png
+    - assets/images/D1.png
+    - assets/images/D2.png
+    - assets/images/D3.png
 
 
 # For information on the generic Dart part of this file, see

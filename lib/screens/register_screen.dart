@@ -207,21 +207,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Image.asset(
-        //   'assets/images/LogoBUS_0.png',
-        //   height: 50,
-        // ),
+        title: Image.asset(
+          'assets/images/logoapp.png',
+          height: 60,
+        ),
         backgroundColor: Colors.white,
         centerTitle: true,
+        automaticallyImplyLeading: false, 
+
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             Center(
               child: Container(
                 width: 340,
-                height: 550,
+                height: 600,
                 padding: const EdgeInsets.all(25),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -250,7 +252,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     RichText(
                       text: TextSpan(
                         children: [
@@ -283,7 +285,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 45),
                     Form(
                       key: _formKey,
                       child: Column(
@@ -297,7 +299,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             validator: (value) =>
                                 validateName(value, 'Name', 1, 50),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 20),
                           _buildTextFormField(
                             controller: _email,
                             labelText: 'Email',
@@ -306,7 +308,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             focusedBorderColor: Color(0xFF2C2C2C),
                             validator: validateEmail,
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 20),
                           _buildTextFormField(
                             controller: _password,
                             labelText: 'Password',
@@ -328,7 +330,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               },
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 20),
                           _buildTextFormField(
                             controller: _confirmPassword,
                             labelText: 'Confirm Password',

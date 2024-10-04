@@ -5,14 +5,14 @@ import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/goodtimesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
+class LyknhomeScreen extends StatefulWidget {
+  const LyknhomeScreen({super.key});
 
   @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
+  State<LyknhomeScreen> createState() => _LyknhomeScreenState();
 }
 
-class _DashboardScreenState extends State<DashboardScreen> {
+class _LyknhomeScreenState extends State<LyknhomeScreen> {
   final List<String> imagePaths = [
     'assets/images/BUS/SLIDESHOW_5.png',
     'assets/images/BUS/SLIDESHOW_4.png',
