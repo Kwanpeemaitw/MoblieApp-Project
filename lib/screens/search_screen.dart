@@ -199,7 +199,7 @@ class _SearchScreenState extends State<SearchScreen>
                                 ),
                                 child: ClipOval(
                                   child: Image.asset(
-                                    'assets/images/BUS/love.png', 
+                                    'assets/images/lyknsearch.jpg', 
                                     fit: BoxFit.cover,
                                     width: 60, 
                                     height: 60,
@@ -237,7 +237,7 @@ class _SearchScreenState extends State<SearchScreen>
                                 ),
                                 child: ClipOval(
                                   child: Image.asset(
-                                    'assets/images/BUS/liar.png',
+                                    'assets/images/bussearch.jpg',
                                     fit: BoxFit.cover,
                                     width: 60,
                                     height: 60,
