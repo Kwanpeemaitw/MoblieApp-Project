@@ -1,41 +1,13 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 
-class DancesongScreen extends StatefulWidget {
-  const DancesongScreen({super.key});
+class LovesongScreen extends StatefulWidget {
+  const LovesongScreen({super.key});
 
   @override
-  State<DancesongScreen> createState() => _DancesongScreenState();
+  State<LovesongScreen> createState() => _LovesongScreenState();
 }
 
-class _DancesongScreenState extends State<DancesongScreen> {
-  final List<String> imagePaths = [
-    'assets/images/tranformer.png',
-    'assets/images/step.png',
-    'assets/images/ooh.png',
-  ];
-
-  late int _currentImageIndex;
-  late Timer _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentImageIndex = 0;
-
-    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
-      setState(() {
-        _currentImageIndex = (_currentImageIndex + 1) % imagePaths.length;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
-
+class _LovesongScreenState extends State<LovesongScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +15,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Image.asset(
-          'assets/images/LogoBUS_0.png',
+          'assets/images/BUS/LogoBUS_0.png',
           height: 50,
         ),
         centerTitle: true,
@@ -55,7 +27,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                imagePaths[_currentImageIndex], 
+                'assets/images/BUS/love.png',
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -63,7 +35,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'HIP-HOP/DANCE SONG',
+              'LOVE SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -71,7 +43,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
-              '3 Songs',
+              '1 Song',
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -92,7 +64,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/ooh.png',
+                        'assets/images/BUS/love.png',
                         width: 41,
                         height: 41,
                       ),
@@ -103,9 +75,10 @@ class _DancesongScreenState extends State<DancesongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'ฟีลลิ่งแบบว่าอู้วว!',
+                          'Because of You, I Shine',
                           style: TextStyle(
-                            color: Colors.black,
+                            color:
+                                Colors.black,
                             fontSize: 18,
                           ),
                         ),
@@ -122,8 +95,8 @@ class _DancesongScreenState extends State<DancesongScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
 
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -140,7 +113,7 @@ class _DancesongScreenState extends State<DancesongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/step.png',
+                        'assets/images/BUS/we.png',
                         width: 41,
                         height: 41,
                       ),
@@ -151,9 +124,10 @@ class _DancesongScreenState extends State<DancesongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'WATCH YOUR STEP',
+                          'ภาพเรา',
                           style: TextStyle(
-                            color: Colors.black,
+                            color:
+                                Colors.black,
                             fontSize: 18,
                           ),
                         ),
@@ -170,60 +144,14 @@ class _DancesongScreenState extends State<DancesongScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
 
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
-                );
-              },
-              child: Container(
-                width: 270,
-                height: 50,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: Image.asset(
-                        'assets/images/tranformer.png',
-                        width: 41,
-                        height: 41,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'TRANSFORMER',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          'BUS',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 class SecondPage extends StatelessWidget {
   @override

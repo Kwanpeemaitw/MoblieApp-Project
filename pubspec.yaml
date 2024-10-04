@@ -35,20 +35,20 @@ flutter:
 
   # To add assets to your application, add an assets section here.
   assets:
-    - assets/images/LogoBUS_0.png
-    - assets/images/SLIDESHOW_1.png
-    - assets/images/SLIDESHOW_3.png
-    - assets/images/SLIDESHOW_4.png
-    - assets/images/SLIDESHOW_5.png
-    - assets/images/brother.png
-    - assets/images/love.png
-    - assets/images/bussing.png
-    - assets/images/liar.png
-    - assets/images/ooh.png
-    - assets/images/nomatterwhat.png
-    - assets/images/step.png
-    - assets/images/tranformer.png
-    - assets/images/we.png
+    - assets/images/BUS/LogoBUS_0.png
+    - assets/images/BUS/SLIDESHOW_1.png
+    - assets/images/BUS/SLIDESHOW_3.png
+    - assets/images/BUS/SLIDESHOW_4.png
+    - assets/images/BUS/SLIDESHOW_5.png
+    - assets/images/BUS/brother.png
+    - assets/images/BUS/love.png
+    - assets/images/BUS/bussing.png
+    - assets/images/BUS/liar.png
+    - assets/images/BUS/ooh.png
+    - assets/images/BUS/nomatterwhat.png
+    - assets/images/BUS/step.png
+    - assets/images/BUS/tranformer.png
+    - assets/images/BUS/we.png
 
 
 # For information on the generic Dart part of this file, see

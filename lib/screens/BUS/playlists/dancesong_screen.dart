@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class SadsongScreen extends StatefulWidget {
-  const SadsongScreen({super.key});
+class DancesongScreen extends StatefulWidget {
+  const DancesongScreen({super.key});
 
   @override
-  State<SadsongScreen> createState() => _SadsongScreenState();
+  State<DancesongScreen> createState() => _DancesongScreenState();
 }
 
-class _SadsongScreenState extends State<SadsongScreen> {
+class _DancesongScreenState extends State<DancesongScreen> {
   final List<String> imagePaths = [
-    'assets/images/brother.png',
-    'assets/images/nomatterwhat.png',
-    'assets/images/liar.png',
+    'assets/images/BUS/tranformer.png',
+    'assets/images/BUS/step.png',
+    'assets/images/BUS/ooh.png',
   ];
 
   late int _currentImageIndex;
@@ -43,7 +43,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Image.asset(
-          'assets/images/LogoBUS_0.png',
+          'assets/images/BUS/LogoBUS_0.png',
           height: 50,
         ),
         centerTitle: true,
@@ -63,7 +63,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'SAD SONG',
+              'HIP-HOP/DANCE SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -92,7 +92,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/brother.png',
+                        'assets/images/BUS/ooh.png',
                         width: 41,
                         height: 41,
                       ),
@@ -103,14 +103,14 @@ class _SadsongScreenState extends State<SadsongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'แค่น้องชาย (Brother Zone)',
+                          'ฟีลลิ่งแบบว่าอู้วว!',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                           ),
                         ),
                         Text(
-                          'BUS7',
+                          'BUS',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 14,
@@ -140,7 +140,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/nomatterwhat.png',
+                        'assets/images/BUS/step.png',
                         width: 41,
                         height: 41,
                       ),
@@ -151,14 +151,14 @@ class _SadsongScreenState extends State<SadsongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'แค่ไหนแค่นั้น',
+                          'WATCH YOUR STEP',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                           ),
                         ),
                         Text(
-                          'BUS5',
+                          'BUS',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 14,
@@ -188,7 +188,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/liar.png',
+                        'assets/images/BUS/tranformer.png',
                         width: 41,
                         height: 41,
                       ),
@@ -199,7 +199,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'LIAR',
+                          'TRANSFORMER',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,

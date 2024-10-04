@@ -15,7 +15,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Image.asset(
-          'assets/images/LogoBUS_0.png',
+          'assets/images/BUS/LogoBUS_0.png',
           height: 50,
         ),
         centerTitle: true,
@@ -27,7 +27,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/bussing.png',
+                'assets/images/BUS/bussing.png',
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -64,7 +64,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(
-                        'assets/images/bussing.png',
+                        'assets/images/BUS/bussing.png',
                         width: 41,
                         height: 41,
                       ),

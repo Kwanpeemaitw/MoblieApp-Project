@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:musicapp_final/screens/playlists/dancesong_screen.dart';
-import 'package:musicapp_final/screens/playlists/lovesong_screen.dart';
-import 'package:musicapp_final/screens/playlists/rapsong_screen.dart';
-import 'package:musicapp_final/screens/playlists/sadsong_screen.dart';
+import 'package:musicapp_final/screens/BUS/playlists/dancesong_screen.dart';
+import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
+import 'package:musicapp_final/screens/BUS/playlists/rapsong_screen.dart';
+import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -97,7 +97,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             const SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: const EdgeInsets.only(left: 10.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
