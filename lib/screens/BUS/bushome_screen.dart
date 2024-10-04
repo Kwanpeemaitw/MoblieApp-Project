@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/bus_music.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/picture_music.dart';
+// import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
+// import 'package:musicapp_final/screens/BUS/musicplayer/bus_music.dart';
+// import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
+// import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
+// import 'package:musicapp_final/screens/BUS/musicplayer/picture_music.dart';
 import 'package:musicapp_final/screens/BUS/playlists/dancesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/goodtimesong_screen.dart';
@@ -102,8 +102,8 @@ class _BushomeScreenState extends State<BushomeScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 10.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -151,11 +151,11 @@ class _BushomeScreenState extends State<BushomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Love',
                                 style: TextStyle(
@@ -209,11 +209,11 @@ class _BushomeScreenState extends State<BushomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Sad',
                                 style: TextStyle(
@@ -273,11 +273,11 @@ class _BushomeScreenState extends State<BushomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Dance',
                                 style: TextStyle(
@@ -332,11 +332,11 @@ class _BushomeScreenState extends State<BushomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'GoodTime',
                                 style: TextStyle(
@@ -361,8 +361,8 @@ class _BushomeScreenState extends State<BushomeScreen> {
               ],
             ),
             const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0), // Left padding
+            const Padding(
+              padding: EdgeInsets.only(left: 10.0), // Left padding
               child: Align(
                 alignment: Alignment.centerLeft, // Align to the left
                 child: Text(
