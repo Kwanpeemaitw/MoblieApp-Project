@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:musicapp_final/screens/BUS/playlists/dancesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
-import 'package:musicapp_final/screens/BUS/playlists/rapsong_screen.dart';
+import 'package:musicapp_final/screens/BUS/playlists/goodtimesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -300,7 +300,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const RapsongScreen()),
+                          builder: (context) => const GoodtimesongScreen()),
                     );
                   },
                   child: Container(
@@ -339,7 +339,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 ),
                               ),
                               Text(
-                                '1 song',
+                                '2 songs',
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 14,

@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
 
 class SadsongScreen extends StatefulWidget {
   const SadsongScreen({super.key});
@@ -80,7 +83,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => BrotherZoneMusic()),
                 );
               },
               child: Container(
@@ -110,7 +113,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                           ),
                         ),
                         Text(
-                          'BUS7',
+                          'BUS',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 14,
@@ -122,13 +125,11 @@ class _SadsongScreenState extends State<SadsongScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => NoMatterWhatMusic()),
                 );
               },
               child: Container(
@@ -158,7 +159,7 @@ class _SadsongScreenState extends State<SadsongScreen> {
                           ),
                         ),
                         Text(
-                          'BUS5',
+                          'BUS',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 14,
@@ -170,13 +171,11 @@ class _SadsongScreenState extends State<SadsongScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => LiarMusic()),
                 );
               },
               child: Container(
@@ -225,16 +224,3 @@ class _SadsongScreenState extends State<SadsongScreen> {
   }
 }
 
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Page'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Second Page!'),
-      ),
-    );
-  }
-}

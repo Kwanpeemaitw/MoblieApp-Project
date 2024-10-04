@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:musicapp_final/screens/BUS/musicplayer/musicplayer_screen.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/bus_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/picture_music.dart';
 
 class LovesongScreen extends StatefulWidget {
   const LovesongScreen({super.key});
@@ -9,6 +11,32 @@ class LovesongScreen extends StatefulWidget {
 }
 
 class _LovesongScreenState extends State<LovesongScreen> {
+  final List<String> imagePaths = [
+    'assets/images/BUS/love.png',
+    'assets/images/BUS/we.png',
+  ];
+
+  late int _currentImageIndex;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentImageIndex = 0;
+
+    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      setState(() {
+        _currentImageIndex = (_currentImageIndex + 1) % imagePaths.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +56,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/BUS/love.png',
+                imagePaths[_currentImageIndex], 
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -44,7 +72,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
-              '1 Song',
+              '2 Songs',
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -53,7 +81,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MusicPlayer()),
+                  MaterialPageRoute(builder: (context) => BusMusic()),
                 );
               },
               child: Container(
@@ -97,12 +125,11 @@ class _LovesongScreenState extends State<LovesongScreen> {
               ),
             ),
 
-            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => PictureMusic()),
                 );
               },
               child: Container(
@@ -154,16 +181,5 @@ class _LovesongScreenState extends State<LovesongScreen> {
 }
 
 
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Page'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Second Page!'),
-      ),
-    );
-  }
-}
+
+

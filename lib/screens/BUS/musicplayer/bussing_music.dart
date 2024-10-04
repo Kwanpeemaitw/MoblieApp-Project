@@ -8,16 +8,16 @@ import 'package:palette_generator/palette_generator.dart';
 import 'package:spotify/spotify.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
-class MusicPlayer extends StatefulWidget {
-  const MusicPlayer({super.key});
+class BussingMusic extends StatefulWidget {
+  const BussingMusic({super.key});
 
   @override
-  State<MusicPlayer> createState() => _MusicPlayerState();
+  State<BussingMusic> createState() => _BussingMusicState();
 }
 
-class _MusicPlayerState extends State<MusicPlayer> {
+class _BussingMusicState extends State<BussingMusic> {
   final player = AudioPlayer();
-  Music music = Music(trackId: '4Apva8F7YKYyqwOCGfCnK6');
+  Music music = Music(trackId: '0H1rhRyBH1reSi3Qac8Y2j');
   bool isLoading = true; // Add loading state
 
   @override
@@ -54,10 +54,13 @@ class _MusicPlayerState extends State<MusicPlayer> {
         // Handle audio streaming
         try {
           var yt = YoutubeExplode();
-          final video = (await yt.search.search("$tempSongName ${music.artistName ?? ""}")).first;
+          final video = (await yt.search
+                  .search("$tempSongName ${music.artistName ?? ""}"))
+              .first;
           music.duration = video.duration;
 
-          await player.setSource(UrlSource('https://firebasestorage.googleapis.com/v0/b/musicapp-19ecb.appspot.com/o/bus.mp3?alt=media&token=e78311c9-8358-4652-9f46-311bc5d1723e')); // Set audio source
+          await player.setSource(UrlSource(
+              'https://firebasestorage.googleapis.com/v0/b/musicapp-19ecb.appspot.com/o/bussing.mp3?alt=media&token=e28657e1-2525-47b1-9010-a233eb9bffba')); // Set audio source
           await player.resume(); // Start playback
         } catch (e) {
           print("Error: $e");
@@ -80,11 +83,13 @@ class _MusicPlayerState extends State<MusicPlayer> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    if (isLoading) { // Check loading state
+    if (isLoading) {
+      // Check loading state
       return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: CircularProgressIndicator(color: Colors.black), // Show loading indicator
+          child: CircularProgressIndicator(
+              color: Colors.black), // Show loading indicator
         ),
       );
     }
@@ -104,7 +109,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                   IconButton(
                     icon: const Icon(Icons.close, color: Colors.white),
                     onPressed: () {
-                      Navigator.of(context).pop(); // Navigate back to LovesongScreen
+                      Navigator.of(context)
+                          .pop(); // Navigate back to LovesongScreen
                     },
                   ),
                   Column(
@@ -112,7 +118,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                     children: [
                       Text(
                         'Singing Now',
-                        style: textTheme.bodyMedium?.copyWith(color: Colors.white),
+                        style:
+                            textTheme.bodyMedium?.copyWith(color: Colors.white),
                       ),
                       const SizedBox(height: 6),
                       Row(
@@ -128,7 +135,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                           const SizedBox(width: 4),
                           Text(
                             music.artistName ?? '-',
-                            style: textTheme.bodyLarge?.copyWith(color: Colors.white),
+                            style: textTheme.bodyLarge
+                                ?.copyWith(color: Colors.white),
                           )
                         ],
                       )
@@ -149,18 +157,25 @@ class _MusicPlayerState extends State<MusicPlayer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              music.songName ?? '',
-                              style: textTheme.titleLarge?.copyWith(color: Colors.white),
-                            ),
-                            Text(
-                              music.artistName ?? '-',
-                              style: textTheme.titleMedium?.copyWith(color: Colors.white60),
-                            ),
-                          ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                music.songName ?? '',
+                                style: textTheme.titleLarge
+                                    ?.copyWith(color: Colors.white),
+                                maxLines: 2, // Limit to 2 lines
+                                overflow: TextOverflow
+                                    .ellipsis, // Add ellipsis if the song name is too long
+                              ),
+                              Text(
+                                music.artistName ?? '-',
+                                style: textTheme.titleMedium
+                                    ?.copyWith(color: Colors.white60),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -174,7 +189,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
                           bufferedBarColor: Colors.white38,
                           baseBarColor: Colors.white10,
                           thumbColor: Colors.white,
-                          timeLabelTextStyle: const TextStyle(color: Colors.white),
+                          timeLabelTextStyle:
+                              const TextStyle(color: Colors.white),
                           progressBarColor: Colors.white,
                           onSeek: (duration) {
                             player.seek(duration);
@@ -183,11 +199,13 @@ class _MusicPlayerState extends State<MusicPlayer> {
                       },
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Center buttons
+                      mainAxisAlignment:
+                          MainAxisAlignment.center, // Center buttons
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.skip_previous, color: Colors.white, size: 36),
+                          icon: const Icon(Icons.skip_previous,
+                              color: Colors.white, size: 36),
                         ),
                         IconButton(
                           onPressed: () async {
@@ -199,14 +217,17 @@ class _MusicPlayerState extends State<MusicPlayer> {
                             setState(() {});
                           },
                           icon: Icon(
-                            player.state == PlayerState.playing ? Icons.pause : Icons.play_circle,
+                            player.state == PlayerState.playing
+                                ? Icons.pause
+                                : Icons.play_circle,
                             color: Colors.white,
                             size: 60,
                           ),
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.skip_next, color: Colors.white, size: 36),
+                          icon: const Icon(Icons.skip_next,
+                              color: Colors.white, size: 36),
                         ),
                       ],
                     ),

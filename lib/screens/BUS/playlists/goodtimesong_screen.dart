@@ -1,13 +1,43 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class RapsongScreen extends StatefulWidget {
-  const RapsongScreen({super.key});
+import 'package:flutter/material.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/bussing_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/picture_music.dart';
+
+class GoodtimesongScreen extends StatefulWidget {
+  const GoodtimesongScreen({super.key});
 
   @override
-  State<RapsongScreen> createState() => _RapsongScreenState();
+  State<GoodtimesongScreen> createState() => _GoodtimesongScreenState();
 }
 
-class _RapsongScreenState extends State<RapsongScreen> {
+class _GoodtimesongScreenState extends State<GoodtimesongScreen> {
+  final List<String> imagePaths = [
+    'assets/images/BUS/bussing.png',
+    'assets/images/BUS/we.png',
+  ];
+
+  late int _currentImageIndex;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentImageIndex = 0;
+
+    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      setState(() {
+        _currentImageIndex = (_currentImageIndex + 1) % imagePaths.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +57,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                'assets/images/BUS/bussing.png',
+                imagePaths[_currentImageIndex], 
                 width: 270,
                 height: 270,
                 fit: BoxFit.cover,
@@ -35,7 +65,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'HIP-HOP/RAP SONG',
+              'GOODTIME SONG',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -43,7 +73,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
-              '1 Song',
+              '2 Songs',
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -52,7 +82,7 @@ class _RapsongScreenState extends State<RapsongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => BussingMusic()),
                 );
               },
               child: Container(
@@ -96,24 +126,56 @@ class _RapsongScreenState extends State<RapsongScreen> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PictureMusic()),
+                );
+              },
+              child: Container(
+                width: 270,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        'assets/images/BUS/we.png',
+                        width: 41,
+                        height: 41,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'ภาพเรา',
+                          style: TextStyle(
+                            color:
+                                Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          'BUS',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
           ],
         ),
-      ),
-    );
-  }
-}
-
-
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Page'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Second Page!'),
       ),
     );
   }
