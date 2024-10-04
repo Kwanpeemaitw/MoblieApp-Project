@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/musicplayer_screen.dart';
 
 class LovesongScreen extends StatefulWidget {
   const LovesongScreen({super.key});
@@ -52,7 +53,7 @@ class _LovesongScreenState extends State<LovesongScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
+                  MaterialPageRoute(builder: (context) => MusicPlayer()),
                 );
               },
               child: Container(
