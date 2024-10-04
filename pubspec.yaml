@@ -60,6 +60,20 @@ flutter:
     - assets/images/D2.png
     - assets/images/D3.png
 
+    - assets/images/lyknsearch.jpg
+    - assets/images/bussearch.jpg
+    - assets/images/LYKN/IMG_7621.JPG
+    - assets/images/LYKN/IMG_7622.JPG
+    - assets/images/LYKN/IMG_7623.JPG
+    - assets/images/LYKN/IMG_7626.JPG
+    - assets/images/LYKN/IMG_7628.JPG
+    - assets/images/LYKN/IMG_7629.JPG
+
+
+
+
+
+
 
 # For information on the generic Dart part of this file, see
 # the following page: https://dart.dev/tools/pub/pubspec
