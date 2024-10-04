@@ -14,10 +14,10 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final List<String> imagePaths = [
-    'assets/images/SLIDESHOW_5.png',
-    'assets/images/SLIDESHOW_4.png',
-    'assets/images/SLIDESHOW_3.png',
-    'assets/images/SLIDESHOW_1.png',
+    'assets/images/BUS/SLIDESHOW_5.png',
+    'assets/images/BUS/SLIDESHOW_4.png',
+    'assets/images/BUS/SLIDESHOW_3.png',
+    'assets/images/BUS/SLIDESHOW_1.png',
   ];
 
   late PageController _pageController;
@@ -59,7 +59,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Image.asset(
-          'assets/images/LogoBUS_0.png',
+          'assets/images/BUS/LogoBUS_0.png',
           height: 50,
         ),
         centerTitle: true,
@@ -139,7 +139,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(5),
                               child: Image.asset(
-                                'assets/images/love.png',
+                                'assets/images/BUS/love.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -197,7 +197,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(5),
                               child: Image.asset(
-                                'assets/images/brother.png',
+                                'assets/images/BUS/brother.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -261,7 +261,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(5),
                               child: Image.asset(
-                                'assets/images/ooh.png',
+                                'assets/images/BUS/ooh.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -320,7 +320,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(5),
                               child: Image.asset(
-                                'assets/images/bussing.png',
+                                'assets/images/BUS/bussing.png',
                                 fit: BoxFit.cover,
                               ),
                             ),

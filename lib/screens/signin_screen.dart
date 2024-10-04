@@ -18,10 +18,10 @@ class _SigninScreenState extends State<SigninScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset(
-          'assets/images/LogoBUS_0.png',
-          height: 50,
-        ),
+        // title: Image.asset(
+        //   // 'assets/images/LogoBUS_0.png',
+        //   height: 50,
+        // ),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
