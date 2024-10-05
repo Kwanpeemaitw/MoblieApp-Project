@@ -145,11 +145,11 @@ class _LyknhomeScreenState extends State<LyknhomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Love',
                                 style: TextStyle(
@@ -203,11 +203,11 @@ class _LyknhomeScreenState extends State<LyknhomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Sad',
                                 style: TextStyle(
@@ -267,11 +267,11 @@ class _LyknhomeScreenState extends State<LyknhomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Dance',
                                 style: TextStyle(
@@ -326,11 +326,11 @@ class _LyknhomeScreenState extends State<LyknhomeScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: const [
+                            children: [
                               Text(
                                 'Good Time',
                                 style: TextStyle(
