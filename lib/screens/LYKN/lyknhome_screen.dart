@@ -1,9 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:musicapp_final/screens/BUS/playlists/dancesong_screen.dart';
-import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
-import 'package:musicapp_final/screens/BUS/playlists/goodtimesong_screen.dart';
-import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 
 class LyknhomeScreen extends StatefulWidget {
   const LyknhomeScreen({super.key});
@@ -14,10 +10,9 @@ class LyknhomeScreen extends StatefulWidget {
 
 class _LyknhomeScreenState extends State<LyknhomeScreen> {
   final List<String> imagePaths = [
-    'assets/images/BUS/SLIDESHOW_5.png',
-    'assets/images/BUS/SLIDESHOW_4.png',
-    'assets/images/BUS/SLIDESHOW_3.png',
-    'assets/images/BUS/SLIDESHOW_1.png',
+    'assets/images/LYKN/SLDSHOW1.JPG',
+    'assets/images/LYKN/SLDSHOW2.JPG',
+    'assets/images/LYKN/SLDSHOW3.JPG',
   ];
 
   late PageController _pageController;
@@ -56,305 +51,187 @@ class _LyknhomeScreenState extends State<LyknhomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Image.asset(
-          'assets/images/BUS/LogoBUS_0.png',
-          height: 50,
+          'assets/images/LYKN/LogoLYKN.png',
+          height: 60,
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: SizedBox(
-                height: 209,
-                child: PageView.builder(
-                  itemCount: imagePaths.length,
-                  controller: _pageController,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.zero,
+      body: Container(
+        color: Colors.white, // Ensures the background is white
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                  height: 209,
+                  child: PageView.builder(
+                    itemCount: imagePaths.length,
+                    controller: _pageController,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.zero,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            imagePaths[index],
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Mood Playlists',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 185,
+                      height: 50,
                       decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 2, 2, 2),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          imagePaths[index],
-                          fit: BoxFit.cover,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 35,
+                              height: 35,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5),
+                                child: Image.asset(
+                                  'assets/images/LYKN/IMG_7628.JPG',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Joyful',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Text(
+                                  '4 songs',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 185,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 2, 2, 2),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 35,
+                              height: 35,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5),
+                                child: Image.asset(
+                                  'assets/images/LYKN/IMG_7621.JPG',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Relaxing',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  '3 songs',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              const Padding(
+                padding: EdgeInsets.only(left: 10.0), // Left padding
+                child: Align(
+                  alignment: Alignment.centerLeft, // Align to the left
+                  child: Text(
+                    'All Songs',
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Mood Playlists',
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LovesongScreen()),
-                    );
-                  },
-                  child: Container(
-                    width: 185,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 2, 2, 2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 35,
-                            height: 35,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/BUS/love.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Love',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              Text(
-                                '2 songs',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SadsongScreen()),
-                    );
-                  },
-                  child: Container(
-                    width: 185,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 2, 2, 2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 35,
-                            height: 35,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/BUS/brother.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Sad',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              SizedBox(height: 2),
-                              Text(
-                                '3 songs',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DancesongScreen()),
-                    );
-                  },
-                  child: Container(
-                    width: 185,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 2, 2, 2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 35,
-                            height: 35,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/BUS/ooh.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Dance',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              SizedBox(height: 2),
-                              Text(
-                                '3 songs',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GoodtimesongScreen()),
-                    );
-                  },
-                  child: Container(
-                    width: 185,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 2, 2, 2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 35,
-                            height: 35,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/BUS/bussing.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Good Time',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              Text(
-                                '2 songs',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
