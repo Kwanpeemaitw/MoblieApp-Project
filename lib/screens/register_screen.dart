@@ -111,39 +111,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  void showSuccessSnackBar() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Expanded(child: const Text('Registration Success')),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profileSetup');
-              },
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.transparent,
-                padding: EdgeInsets.zero,
-              ),
-              child: const Text(
-                'Set Up Profile',
-                style: TextStyle(
-                  color: Colors.white,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.white,
-                  decorationThickness: 2,
-                ),
+void showSuccessSnackBar() {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Row(
+        children: [
+          const Expanded(
+            child: Text(
+              'Registration Success',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/profileSetup');
+            },
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
+              padding: EdgeInsets.zero,
+            ),
+            child: const Text(
+              'Set Up Profile',
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.white,
+                decorationThickness: 2,
               ),
             ),
-          ],
-        ),
-        backgroundColor: Colors.green,
-        behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.all(10),
+          ),
+        ],
       ),
-    );
-  }
+      backgroundColor: Colors.green,
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.all(10),
+    ),
+  );
+}
 
   void showErrorSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -172,6 +176,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       width: width,
       height: height,
       child: TextFormField(
+        key: Key('${labelText.toLowerCase()}Field'), // Add a unique key for the field
         controller: controller,
         validator: validator,
         obscureText: obscureText,
@@ -213,10 +218,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
-        automaticallyImplyLeading: false, 
-
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
+        key: Key('scrollView'), // Add key for SingleChildScrollView
         child: Column(
           children: [
             const SizedBox(height: 30),
@@ -355,8 +360,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 40),
                           registering
-                              ? CircularProgressIndicator()
+                              ? const CircularProgressIndicator()
                               : ElevatedButton(
+                                  key: Key('registerButton'),
                                   onPressed: registration,
                                   child: const Text(
                                     'Register',

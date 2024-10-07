@@ -31,6 +31,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mockito: ^5.0.16
+  build_runner: ^2.1.11
 
   # Recommended lints to encourage good coding practices.
   flutter_lints: ^3.0.0
