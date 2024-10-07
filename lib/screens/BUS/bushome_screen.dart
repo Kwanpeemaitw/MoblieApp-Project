@@ -1,14 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-// import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
-// import 'package:musicapp_final/screens/BUS/musicplayer/bus_music.dart';
-// import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
-// import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
-// import 'package:musicapp_final/screens/BUS/musicplayer/picture_music.dart';
+
 import 'package:musicapp_final/screens/BUS/playlists/dancesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/lovesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/goodtimesong_screen.dart';
 import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
+import 'package:musicapp_final/screens/search_screen.dart';
+
 
 class BushomeScreen extends StatefulWidget {
   const BushomeScreen({super.key});
@@ -64,6 +62,15 @@ class _BushomeScreenState extends State<BushomeScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: IconButton( // Add this IconButton for back navigation
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => SearchScreen()),
+            );
+          },
+        ),
         title: Image.asset(
           'assets/images/BUS/LogoBUS_0.png',
           height: 50,

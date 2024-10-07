@@ -3,8 +3,10 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:musicapp_final/constants/strings.dart';
 import 'package:musicapp_final/models/music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/widget/art_work_images.dart';
+import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:spotify/spotify.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
@@ -90,7 +92,7 @@ class _BrotherZoneMusicState extends State<BrotherZoneMusic> {
         backgroundColor: Colors.white,
         body: Center(
           child: CircularProgressIndicator(
-              color: Colors.black), // Show loading indicator
+              color: Colors.black),
         ),
       );
     }
@@ -110,8 +112,12 @@ class _BrotherZoneMusicState extends State<BrotherZoneMusic> {
                   IconButton(
                     icon: const Icon(Icons.close, color: Colors.white),
                     onPressed: () {
-                      Navigator.of(context)
-                          .pop(); // Navigate back to LovesongScreen
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SadsongScreen(),
+                        ),
+                      );
                     },
                   ),
                   Column(
@@ -204,9 +210,21 @@ class _BrotherZoneMusicState extends State<BrotherZoneMusic> {
                           MainAxisAlignment.center, // Center buttons
                       children: [
                         IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.skip_previous,
-                              color: Colors.white, size: 36),
+                          onPressed: () async {
+                            await player.stop();
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LiarMusic(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.skip_previous,
+                            color: Colors.white,
+                            size: 36,
+                          ),
                         ),
                         IconButton(
                           onPressed: () async {
@@ -226,15 +244,21 @@ class _BrotherZoneMusicState extends State<BrotherZoneMusic> {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {
+                          onPressed: () async {
+                            await player.stop();
+
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const NoMatterWhatMusic()), // Replace with your desired page
+                                builder: (context) => const NoMatterWhatMusic(),
+                              ),
                             );
                           },
-                          icon: const Icon(Icons.skip_next,
-                              color: Colors.white, size: 36),
+                          icon: const Icon(
+                            Icons.skip_next,
+                            color: Colors.white,
+                            size: 36,
+                          ),
                         ),
                       ],
                     ),

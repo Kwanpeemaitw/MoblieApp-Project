@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/screens/BUS/bushome_screen.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/nomatterwhat_music.dart';
@@ -45,6 +46,15 @@ class _SadsongScreenState extends State<SadsongScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: IconButton( // Add this IconButton for back navigation
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const BushomeScreen()),
+            );
+          },
+        ),
         title: Image.asset(
           'assets/images/BUS/LogoBUS_0.png',
           height: 50,

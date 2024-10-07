@@ -3,7 +3,10 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:musicapp_final/constants/strings.dart';
 import 'package:musicapp_final/models/music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/brotherzone_music.dart';
+import 'package:musicapp_final/screens/BUS/musicplayer/liar.dart';
 import 'package:musicapp_final/screens/BUS/musicplayer/widget/art_work_images.dart';
+import 'package:musicapp_final/screens/BUS/playlists/sadsong_screen.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:spotify/spotify.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
@@ -109,8 +112,12 @@ class _NoMatterWhatMusicState extends State<NoMatterWhatMusic> {
                   IconButton(
                     icon: const Icon(Icons.close, color: Colors.white),
                     onPressed: () {
-                      Navigator.of(context)
-                          .pop(); // Navigate back to LovesongScreen
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SadsongScreen()),
+                        (route) => false, // Remove all previous routes
+                      );
                     },
                   ),
                   Column(
@@ -203,9 +210,21 @@ class _NoMatterWhatMusicState extends State<NoMatterWhatMusic> {
                           MainAxisAlignment.center, // Center buttons
                       children: [
                         IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.skip_previous,
-                              color: Colors.white, size: 36),
+                          onPressed: () async {
+                            await player.stop();
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const BrotherZoneMusic(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.skip_previous,
+                            color: Colors.white,
+                            size: 36,
+                          ),
                         ),
                         IconButton(
                           onPressed: () async {
@@ -225,9 +244,20 @@ class _NoMatterWhatMusicState extends State<NoMatterWhatMusic> {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.skip_next,
-                              color: Colors.white, size: 36),
+                          onPressed: () async {
+                            await player.stop(); 
+
+                            Navigator.push(context,
+                              MaterialPageRoute(
+                                builder: (context) => const LiarMusic(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.skip_next,
+                            color: Colors.white,
+                            size: 36,
+                          ),
                         ),
                       ],
                     ),
