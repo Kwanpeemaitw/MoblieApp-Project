@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:musicapp_final/screens/BUS/bushome_screen.dart';
 import 'package:musicapp_final/screens/LYKN/lyknhome_screen.dart';
 
-
 class SearchScreen extends StatefulWidget {
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -28,18 +27,19 @@ class _SearchScreenState extends State<SearchScreen>
     )..repeat();
 
     Timer.periodic(Duration(seconds: 15), (Timer timer) {
-      if (_currentPage < 2) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
-      _pageController.animateToPage(
-        _currentPage,
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    });
-
+  if (_pageController.hasClients) { 
+    if (_currentPage < 2) {
+      _currentPage++;
+    } else {
+      _currentPage = 0;
+    }
+    _pageController.animateToPage(
+      _currentPage,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+});
     _searchController.addListener(_updateSuggestions);
   }
 
@@ -77,6 +77,14 @@ class _SearchScreenState extends State<SearchScreen>
             height: 60,
           ),
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.logout, color: Colors.black),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -195,13 +203,13 @@ class _SearchScreenState extends State<SearchScreen>
                                     color: Colors.black,
                                     width: 4.0,
                                     style: BorderStyle.solid,
-                                  )
+                                  ),
                                 ),
                                 child: ClipOval(
                                   child: Image.asset(
-                                    'assets/images/lyknsearch.jpg', 
+                                    'assets/images/lyknsearch.jpg',
                                     fit: BoxFit.cover,
-                                    width: 60, 
+                                    width: 60,
                                     height: 60,
                                   ),
                                 ),
@@ -233,7 +241,7 @@ class _SearchScreenState extends State<SearchScreen>
                                     color: Colors.black,
                                     width: 4.0,
                                     style: BorderStyle.solid,
-                                  )
+                                  ),
                                 ),
                                 child: ClipOval(
                                   child: Image.asset(
@@ -315,4 +323,3 @@ class _SearchScreenState extends State<SearchScreen>
     );
   }
 }
-
