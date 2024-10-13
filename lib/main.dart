@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:musicapp_final/screens/BUS/bushome_screen.dart';
+import 'package:musicapp_final/screens/LYKN/lyknhome_screen.dart';
 import 'package:musicapp_final/screens/register_screen.dart';
 import 'package:musicapp_final/screens/search_screen.dart';
 import 'package:musicapp_final/screens/signin_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
@@ -34,8 +36,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => SigninScreen(), 
         '/register': (context) => RegisterScreen(),
         '/search': (context) => SearchScreen(),
-        '/dashboard': (context) => BushomeScreen(),
-
+        '/bushome': (context) => BushomeScreen(),
+        '/lyknhome': (context) => LyknhomeScreen(),
       },
       // home: const LoginScreen(),
     );

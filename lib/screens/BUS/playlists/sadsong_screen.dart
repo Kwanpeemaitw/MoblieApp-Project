@@ -111,10 +111,10 @@ class _SadsongScreenState extends State<SadsongScreen> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
                           'แค่น้องชาย (Brother Zone)',
                           style: TextStyle(
@@ -157,10 +157,10 @@ class _SadsongScreenState extends State<SadsongScreen> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
                           'แค่ไหนแค่นั้น',
                           style: TextStyle(

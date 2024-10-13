@@ -16,5 +16,6 @@ class Music {
       this.songName,
       this.songImage,
       this.artistImage,
-      this.songColor});
+      this.songColor
+      });
 }

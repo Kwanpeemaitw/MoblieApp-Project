@@ -31,7 +31,7 @@ class _SigninScreenState extends State<SigninScreen> {
           Center(
             child: Column(
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Container(
                   width: 340,
                   height: 600,
@@ -49,33 +49,33 @@ class _SigninScreenState extends State<SigninScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'SIGN IN',
                           style: TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Sign In to continue.',
                           style:
                               TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
                         ),
-                        SizedBox(height: 25),
+                        const SizedBox(height: 25),
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
                             hintText: "Email",
                             hintStyle: TextStyle(color: Colors.grey),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFD9D9D9),
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF2C2C2C),
                                 width: 1.0,
                               ),
@@ -89,7 +89,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         TextFormField(
                           controller: _passwordController,
                           obscureText: true,
@@ -97,14 +97,14 @@ class _SigninScreenState extends State<SigninScreen> {
                             hintText: "Password",
                             hintStyle: TextStyle(color: Colors.grey),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFD9D9D9),
                                 width: 1.5,
                               ),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF2C2C2C),
                                 width: 1.5,
                               ),
@@ -118,7 +118,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         Container(
                           width: 312,
                           height: 45,
@@ -129,26 +129,26 @@ class _SigninScreenState extends State<SigninScreen> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 50, vertical: 5),
-                              backgroundColor: Color(0xFF2C2C2C),
+                              backgroundColor: const Color(0xFF2C2C2C),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Sign In',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
-                        SizedBox(height: 30),
-                        Text(
+                        const SizedBox(height: 30),
+                        const Text(
                           'Or Sing in with',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         SignInButton(
                           Buttons.google,
                           text: "Sign in with Google",
@@ -158,14 +158,14 @@ class _SigninScreenState extends State<SigninScreen> {
                               Navigator.pushNamed(context, '/search');
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                     content: Text('Google Sign-In failed')),
                               );
                             }
                           },
                         ),
-                        SizedBox(height: 30),
-                        Text(
+                        const SizedBox(height: 30),
+                        const Text(
                           'New member?',
                           style:
                               TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
@@ -174,7 +174,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           onPressed: () {
                             Navigator.pushNamed(context, '/register');
                           },
-                          child: Text(
+                          child: const Text(
                             'Sign Up',
                             style: TextStyle(fontSize: 16, color: Colors.black),
                           ),
