@@ -1,7 +1,3 @@
-Sure! Here’s the same `README.md` content without Markdown formatting:
-
----
-
 # musicapp_final
 
 ## Overview
