@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/models/RegistrationModel.dart';
 import 'package:musicapp_final/services/auth_service.dart';
+import 'package:provider/provider.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -13,6 +15,15 @@ class _SigninScreenState extends State<SigninScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    super.initState();
+    // กำหนดค่าให้กับ emailController และ passwordController จากข้อมูลที่เก็บไว้
+    final registrationModel = Provider.of<RegistrationModel>(context, listen: false);
+    _emailController.text = registrationModel.lastEmail ?? '';
+    _passwordController.text = registrationModel.lastPassword ?? '';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +46,11 @@ class _SigninScreenState extends State<SigninScreen> {
                 Container(
                   width: 340,
                   height: 600,
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
-                      color: Color(0xFFD9D9D9),
+                      color: const Color(0xFFD9D9D9),
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(10),
@@ -58,8 +69,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                         const Text(
                           'Sign In to continue.',
-                          style:
-                              TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
+                          style: TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
                         ),
                         const SizedBox(height: 25),
                         TextFormField(
@@ -125,7 +135,21 @@ class _SigninScreenState extends State<SigninScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState?.validate() ?? false) {
-                                print("Sign In");
+                                // เข้าสู่ระบบด้วยอีเมลและรหัสผ่าน
+                                AuthService().signInWithEmailAndPassword(
+                                  _emailController.text,
+                                  _passwordController.text,
+                                ).then((user) {
+                                  if (user != null) {
+                                    // หากเข้าสู่ระบบสำเร็จ นำทางไปยังหน้า Search
+                                    Navigator.pushNamed(context, '/search');
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content: Text('Sign In failed')),
+                                    );
+                                  }
+                                });
                               }
                             },
                             style: ElevatedButton.styleFrom(
@@ -138,14 +162,13 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                             child: const Text(
                               'Sign In',
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.white),
+                              style: TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
                         const SizedBox(height: 30),
                         const Text(
-                          'Or Sing in with',
+                          'Or Sign in with',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                         const SizedBox(height: 10),
@@ -167,8 +190,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         const SizedBox(height: 30),
                         const Text(
                           'New member?',
-                          style:
-                              TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
+                          style: TextStyle(fontSize: 16, color: Color(0xFF5A5A5A)),
                         ),
                         TextButton(
                           onPressed: () {

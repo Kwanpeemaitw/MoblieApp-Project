@@ -1,12 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:musicapp_final/models/RegistrationModel.dart';
+import 'package:provider/provider.dart'; 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:musicapp_final/screens/BUS/bushome_screen.dart';
 import 'package:musicapp_final/screens/LYKN/lyknhome_screen.dart';
 import 'package:musicapp_final/screens/register_screen.dart';
 import 'package:musicapp_final/screens/search_screen.dart';
 import 'package:musicapp_final/screens/signin_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,24 +22,25 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+    return ChangeNotifierProvider(
+      create: (context) => RegistrationModel(), // กำหนด Provider ที่นี่
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => SigninScreen(), 
+          '/register': (context) => RegisterScreen(),
+          '/search': (context) => SearchScreen(),
+          '/bushome': (context) => BushomeScreen(),
+          '/lyknhome': (context) => LyknhomeScreen(),
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => SigninScreen(), 
-        '/register': (context) => RegisterScreen(),
-        '/search': (context) => SearchScreen(),
-        '/bushome': (context) => BushomeScreen(),
-        '/lyknhome': (context) => LyknhomeScreen(),
-      },
-      // home: const LoginScreen(),
     );
   }
 }

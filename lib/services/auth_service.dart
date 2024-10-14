@@ -1,17 +1,21 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Method to sign up with email and password
-    // Method to sign up with email and password
   Future<User?> signUpWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+
+      // Save the last used email and password
+      await _saveCredentials(email, password);
+
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -24,7 +28,6 @@ class AuthService {
     }
     return null;
   }
-
 
   // Method to sign in with email and password
   Future<User?> signInWithEmailAndPassword(String email, String password) async {
@@ -78,4 +81,19 @@ class AuthService {
 
   // Stream to listen for auth changes
   Stream<User?> get authStateChanges => _auth.authStateChanges();
+
+  // Method to save last email and password
+  Future<void> _saveCredentials(String email, String password) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('lastEmail', email);
+    await prefs.setString('lastPassword', password);
+  }
+
+  // Method to retrieve last email and password
+  Future<Map<String, String?>> getLastCredentials() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? email = prefs.getString('lastEmail');
+    String? password = prefs.getString('lastPassword');
+    return {'email': email, 'password': password};
+  }
 }
