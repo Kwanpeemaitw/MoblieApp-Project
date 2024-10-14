@@ -35,6 +35,9 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.0.16
   build_runner: ^2.1.11
+  integration_test:
+    sdk: flutter
+  firebase_auth_mocks: ^0.14.1
 
 
   # Recommended lints to encourage good coding practices.
